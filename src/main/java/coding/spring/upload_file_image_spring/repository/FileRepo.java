@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.nio.file.Files;
 import java.util.Optional;
-
+@Repository
 
 public interface FileRepo extends JpaRepository<File,Long> {
     Optional<File> findByName(String name);
