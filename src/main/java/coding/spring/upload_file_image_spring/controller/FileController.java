@@ -13,7 +13,6 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api")
 public class FileController {
-      @Autowired
       private FileService fileService;
       @PostMapping("/ulpoadFile")
       public ResponseEntity<String> storeFileIntoBD(@RequestParam("file") MultipartFile files) throws IOException {

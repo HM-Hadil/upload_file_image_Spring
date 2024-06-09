@@ -11,7 +11,6 @@ import java.nio.file.Files;
 
 @Service
 public class FileService {
-    @Autowired
     private FileRepo fileRepo;
 
     public String storeFile(MultipartFile file) throws IOException {
@@ -20,7 +19,7 @@ public class FileService {
                 .type(file.getContentType())
                 .imageData(file.getBytes())
                 .build();
-         files= fileRepo.save(files);
+         files= this.fileRepo.save(files);
         if (files.getId() !=null){
             return " File uploaded successfuly into data base";
         }
