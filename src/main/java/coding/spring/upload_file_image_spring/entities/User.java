@@ -9,14 +9,16 @@ import lombok.*;
 @Setter
 @Getter
 @Builder
-public class File {
+@Table(name = "_user")
+public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-    private String name;
-    private String type;
-
+    private String nameImage;
+    private String typeImage;
+    private String username;
+    private String age;
     @Lob
+    @Column(name = "picture",length = 1000000)
     private byte[] imageData;
 }
