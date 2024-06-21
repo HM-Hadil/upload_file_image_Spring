@@ -42,6 +42,7 @@ public class UserService {
         if (optionalUser.isPresent()) {
             User user = optionalUser.get();
             user.setUsername(userDetails.getUsername());
+            user.setAge(userDetails.getAge());
             if (file != null && !file.isEmpty()) {
                 user.setImageData(file.getBytes());
                 user.setTypeImage(file.getContentType());
