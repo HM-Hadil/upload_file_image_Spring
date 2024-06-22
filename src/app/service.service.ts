@@ -7,11 +7,11 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ServiceService {
-url="http://localhost:9091:api/"
+url="http://localhost:9091/api"
   constructor(private http:HttpClient) { }
 
   createUser(user:UserModel):Observable<UserModel>{
-    return this.http.post<UserModel>(this.url + "uploadFile", user);
+    return this.http.post<UserModel>(this.url + "/uploadFile", user);
   }
   getAllUsers():Observable<UserModel[]>{
     return this.http.get<UserModel[]>(this.url+"/getAllUsers");
