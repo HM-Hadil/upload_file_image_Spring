@@ -1,35 +1,200 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" href="#">Navbar</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<!--start nabvar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <!--start offcanvas trigger-->
+  <button
+    class="navbar-toggler me-2"
+    type="button"
+    data-bs-toggle="offcanvas"
+    data-bs-target="#offcanvasExample"
+    aria-controls="offcanvasExample"
+  >
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <!--end offcanvas-->
+
+  <a class="navbar-brand fw-bold text-uppercase me-auto ms-1" href="#"
+    >Admin Panel</a
+  >
+  <button
+    class="navbar-toggler"
+    type="button"
+    data-toggle="collapse"
+    data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent"
+    aria-expanded="false"
+    aria-label="Toggle navigation"
+  >
     <span class="navbar-toggler-icon"></span>
   </button>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-    <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
-        <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Link</a>
-      </li>
+    <form class="d-flex ms-auto">
+      <div class="input-group my-3 my-lg-0">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Recipient's username"
+          aria-label="Recipient's username"
+          aria-describedby="button-addon2"
+        />
+        <button
+          class="btn btn-outline-secondary"
+          type="button"
+          id="button-addon2"
+        >
+          <i class="bi bi-search"></i>
+        </button>
+      </div>
+    </form>
+    <ul class="navbar-nav mb-4 mb-lg-0">
       <li class="nav-item dropdown">
-        <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-          Dropdown
+        <a
+          class="nav-link dropdown-toggle"
+          href="#"
+          role="button"
+          data-toggle="dropdown"
+          aria-expanded="false"
+        >
+          <i class="bi bi-person-fill" style="color: white"></i>
         </a>
-        <div class="dropdown-menu">
-          <a class="dropdown-item" href="#">Action</a>
-          <a class="dropdown-item" href="#">Another action</a>
-          <div class="dropdown-divider"></div>
-          <a class="dropdown-item" href="#">Something else here</a>
-        </div>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link disabled">Disabled</a>
+        <ul class="dropdown-menu dropdown-menu-end">
+          <li><a class="dropdown-item" href="#">Action</a></li>
+          <li><a class="dropdown-item" href="#">Another action</a></li>
+          <li><hr class="dropdown-divider" /></li>
+          <li><a class="dropdown-item" href="#">Something else here</a></li>
+        </ul>
       </li>
     </ul>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-    </form>
   </div>
 </nav>
+<!--end navbar-->
+
+<!--offcanvas-->
+
+<div
+  class="offcanvas offcanvas-start bg-dark text-white sidebar-nav"
+  tabindex="-1"
+  id="offcanvasExample"
+  aria-labelledby="offcanvasExampleLabel"
+>
+  <div class="offcanvas-body p-0">
+    <nav class="navbar-dark">
+      <ul class="navbar-nav">
+        <li>
+          <div class="text-white-50 small text-uppercase px-3">core</div>
+        </li>
+        <li>
+          <a href="" class="nav-link px-3 active">
+            <span class="me-2"><i class="bi bi-speedometer2"></i></span>
+            <span>Dashboard</span>
+          </a>
+        </li>
+        <li class="my-4">
+          <hr />
+        </li>
+        <li>
+          <div class="text-white-50 small text-uppercase px-3">Interface</div>
+        </li>
+        <li>
+          <a
+            class="nav-link px-3 d-flex align-items-center sidebar-link"
+            data-bs-toggle="collapse"
+            href="#collapseExample"
+            role="button"
+            aria-expanded="false"
+            aria-controls="collapseExample"
+          >
+            <span class="me-2">
+              <i class="bi bi-layout-split"></i>
+            </span>
+            <span>Layouts</span>
+            <span class="d-inline-flex ms-auto right-icon"
+              ><i class="bi bi-chevron-down"></i
+            ></span>
+          </a>
+          <div class="collapse" id="collapseExample">
+            <div>
+              <ul class="navbar-nav ps-3">
+                <li>
+                  <a href="" class="nav-link px-3">
+                    <span class="me-2">
+                      <i class="bi bi-layout-sidebar"></i>
+                    </span>
+                    <span>Nested link</span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </nav>
+  </div>
+</div>
+<!--end offcanvas-->
+
+<!--main content-->
+<main class="mt-5 pt-3">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12 fw-bold fs-3">Dashboard</div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card text-white bg-primary mb-3" style="max-width: 18rem">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card text-white bg-danger  h-100">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-3 mb-3">
+        <div class="card text-white bg-warning h-100">
+          <div class="card-header">Header</div>
+          <div class="card-body">
+            <h5 class="card-title">Primary card title</h5>
+            <p class="card-text">
+              Some quick example text to build on the card title and make up the
+              bulk of the card's content.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-6">
+        <div class="card">
+          <div class="card-header">
+            Charts
+          </div>
+          <div class="card-body">
+            <canvas class="chart" width="400" height="200">
+
+            </canvas>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</main>
+<!--end main content-->

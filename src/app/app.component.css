@@ -1,0 +1,30 @@
+
+.sidebar-nav{
+  width: 270px ;
+
+}
+@media(min-width:992px){
+  body{
+    overflow:auto !important ;
+  }
+
+  .offcanvas-backdrop::before{
+    display: non;
+  }
+  main{
+    margin-left: 270px
+  }
+
+  .sidebar-nav{
+    transform: none;
+    visibility: visible !important;
+    top:56px;
+    height: calc(100% - 70);
+  }
+}
+.sidebar-link .right-icon{
+  transition: all ease 0.25s;
+}
+.sidebar-link[aria-expanded="true"] .right-icon{
+  transform: rotate(180deg);
+}
