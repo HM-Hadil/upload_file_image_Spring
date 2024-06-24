@@ -17,7 +17,7 @@ public class User {
     private String nameImage;
     private String typeImage;
     private String username;
-    private String age;
+    private Integer age;
     @Lob
     @Column(name = "picture",length = 1000000)
     private byte[] imageData;

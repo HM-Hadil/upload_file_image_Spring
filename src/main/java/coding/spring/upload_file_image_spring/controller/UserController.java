@@ -16,6 +16,7 @@ import java.util.Optional;
 @Slf4j
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(value = "http://localhost:4200")
 public class UserController {
 
     @Autowired
@@ -44,6 +45,13 @@ public class UserController {
         log.info("Updating user with ID {}: user={}, file={}", id, user, file != null ? file.getOriginalFilename() : "no file");
         User updatedUser = userService.updateUser(id, user, file);
         return ResponseEntity.ok(updatedUser);
+    }
+
+
+    @DeleteMapping("/deleteUser/{id}")
+    public ResponseEntity<Void> deleteUser(@PathVariable Long id) {
+        userService.deleteUser(id);
+        return ResponseEntity.noContent().build();
     }
 
 }
