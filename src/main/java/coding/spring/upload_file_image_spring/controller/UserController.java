@@ -1,10 +1,12 @@
 package coding.spring.upload_file_image_spring.controller;
 
+import coding.spring.upload_file_image_spring.DTO.UserDTO;
 import coding.spring.upload_file_image_spring.entities.User;
 import coding.spring.upload_file_image_spring.service.UserService;
 import lombok.extern.slf4j.Slf4j;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
@@ -35,9 +37,12 @@ public class UserController {
         return ResponseEntity.ok(userList);
     }
     @GetMapping("/getUserById/{id}")
-    public ResponseEntity<Optional<User>> getUserById(@PathVariable Long id) {
-        Optional<User> user = userService.getUserById(id);
-        return ResponseEntity.ok(user);
+    public ResponseEntity<UserDTO> getUserById(@PathVariable Long id) {
+        UserDTO user = userService.getUserById(id);
+        if (user == null) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+        return new ResponseEntity<>(user, HttpStatus.OK);
     }
 
     @PutMapping(value = "/updateUser/{id}", consumes = "multipart/form-data")

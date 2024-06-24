@@ -1,6 +1,8 @@
 package coding.spring.upload_file_image_spring.service;
 
+import coding.spring.upload_file_image_spring.DTO.UserDTO;
 import coding.spring.upload_file_image_spring.entities.User;
+import coding.spring.upload_file_image_spring.mapper.UserMapper;
 import coding.spring.upload_file_image_spring.repository.UserRepo;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -14,6 +16,8 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepo userRepo;
+    @Autowired
+    private UserMapper userMapper;
 
     public User saveUserWithFile(User user, MultipartFile file) throws IOException {
       User users = User.builder()
@@ -32,11 +36,13 @@ public class UserService {
         return userRepo.findAll();
     }
 
-    public Optional<User> getUserById(Long id) {
+    public UserDTO getUserById(Long id) {
         Optional<User> optionalUser = userRepo.findById(id);
-        return Optional.ofNullable(optionalUser.orElseThrow(() -> new RuntimeException("User not found with ID " + id)));
+        if (!optionalUser.isPresent()) {
+            return null;
+        }
+        return userMapper.toDto(optionalUser.get());
     }
-
     public User updateUser(Long id, User userDetails, MultipartFile file) throws IOException {
         Optional<User> optionalUser = userRepo.findById(id);
         if (optionalUser.isPresent()) {

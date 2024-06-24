@@ -1,13 +1,16 @@
 package coding.spring.upload_file_image_spring.DTO;
 
+import lombok.Builder;
+import lombok.Data;
 import lombok.experimental.SuperBuilder;
 import lombok.extern.jackson.Jacksonized;
 
-@SuperBuilder
+@Builder
+@Data
 @Jacksonized
 public class UserDTO {
     private Long id;
     private String username;
-    private Integer age;
+    private double age;
     private byte[] imageBase64;
 }
